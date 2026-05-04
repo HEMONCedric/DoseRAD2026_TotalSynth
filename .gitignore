@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Keep the code tree light: raw data lives in ../Dataset.
+data/
+datasets/
+outputs/
+runs/
+checkpoints/
+models/
+*.pt
+*.pth
+*.ckpt
+*.nii
+*.nii.gz
+*.mha
+*.raw
+recommend_crop_sizes_records.jsonl
+recommend_crop_sizes_summary.json
