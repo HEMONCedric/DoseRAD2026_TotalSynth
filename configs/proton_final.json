@@ -1,0 +1,29 @@
+{
+  "format_version": 1,
+  "architecture": "ProtonFiLMLiteResUNet3D",
+  "base_channels": 6,
+  "deep_dropout": 0.05,
+  "deep_supervision_training_only": true,
+  "bev_shape_dls": [288, 64, 64],
+  "bev_spacing_dls_mm": [2.0, 1.0, 1.0],
+  "upstream_from_ray_target_mm": 320.0,
+  "ct_clip_hu": [-1024.0, 3000.0],
+  "dose_scale": 100000.0,
+  "energy_min_mev": 31.729,
+  "energy_max_mev": 200.7966,
+  "validation_patients": [
+    "1ABB039",
+    "1ABB042",
+    "1ABB061",
+    "1THB008",
+    "1THB120",
+    "1THB221"
+  ],
+  "checkpoint": {
+    "source_phase_epoch": 79,
+    "source_zero_based_epoch": 78,
+    "source_sha256": "eb0c5451a9eacd373fe8f54fd05a9cc33098891f2ee9083d2761232319d65e0b",
+    "expected_export_name": "proton_film_lite_b6_epoch79.pt",
+    "inference_export_sha256": "e027b133b625b0bb89cb109a44e74f987a45da9646680a05bd8ee089550fe902"
+  }
+}

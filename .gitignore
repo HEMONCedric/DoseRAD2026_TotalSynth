@@ -9,19 +9,45 @@ build/
 dist/
 *.egg-info/
 
-# Keep the code tree light: raw data lives in ../Dataset.
+# Challenge data, caches, predictions and experiment artefacts.
 data/
 datasets/
+cache/
 outputs/
+results/
 runs/
 checkpoints/
-models/
-*.pt
-*.pth
-*.ckpt
+tensorboard/
+test-data/
+*.mha
+*.mhd
+*.raw
 *.nii
 *.nii.gz
-*.mha
-*.raw
-recommend_crop_sizes_records.jsonl
-recommend_crop_sizes_summary.json
+*.npz
+*.h5
+*.hdf5
+
+# Model resources are downloaded or supplied separately; see models/README.md.
+models/proton/*.pt
+models/impact_synth/
+*.pth
+*.ckpt
+
+# Docker exports and local archives are deliberately not versioned.
+*.tar
+*.tar.gz
+*.zip
+
+# LaTeX build products (paper/paper.pdf is intentionally tracked).
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+
+.DS_Store
+Thumbs.db

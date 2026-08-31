@@ -4,34 +4,42 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "doserad2026"
-version = "0.1.0"
-description = "Utilities and baselines for the DoseRAD2026 challenge"
+version = "1.0.0"
+description = "Reproducible ProtonFiLM-Lite BEV dose prediction for DoseRAD2026"
 readme = "README.md"
-requires-python = ">=3.10"
-dependencies = []
+requires-python = ">=3.10,<3.13"
+license = {file = "LICENSE"}
+dependencies = [
+  "blosc2==3.7.2",
+  "numpy==1.26.4",
+  "scipy==1.15.3",
+  "SimpleITK==2.4.0",
+  "tensorboard==2.18.0",
+  "torch==2.7.1",
+]
 
 [project.optional-dependencies]
-imaging = [
-  "numpy>=1.26",
-  "SimpleITK>=2.3",
-  "pandas>=2.0",
-  "openpyxl>=3.1",
+sct = [
+  "huggingface-hub==1.0.1",
+  "konfai==1.6.0",
+  "segmentation-models-pytorch==0.5.0",
 ]
-training = [
-  "torch>=2.2",
-  "monai>=1.3",
+docker = [
+  "fastapi==0.115.6",
+  "uvicorn==0.34.0",
 ]
 dev = [
-  "pytest>=8.0",
-  "ruff>=0.4",
+  "pytest==8.3.5",
+  "ruff==0.9.10",
 ]
 
-[project.scripts]
-doserad-index = "doserad2026.cli:main"
-
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["."]
+include = ["doserad2026*"]
 
 [tool.ruff]
 line-length = 100
 target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
