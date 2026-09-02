@@ -5,6 +5,9 @@ Reference code for our final **proton CT and proton MRI** entries to the
 method predicts one three-dimensional dose contribution per proton beamlet in
 a beam's-eye-view (BEV) frame and maps it back to the native patient grid.
 
+> **Challenge result:** 2nd place in the [DoseRAD 2026 Proton Dose on MR
+> challenge](https://doserad2026.grand-challenge.org/evaluation/final-testing-proton-dose-on-mr/leaderboard/).
+
 This is a compact scientific release: it contains the final dose architecture,
 preprocessing geometry, loss, training loop, inference runtime, Docker build
 context, and paper sources. It intentionally excludes challenge images,
@@ -29,9 +32,9 @@ form has 3,094,511 trainable parameters. Two decoder heads provide deep
 supervision during training only. The loss is the equal-weight sum of the
 challenge-aligned masked beam MAE and integrated depth-dose (IDD) RMSE.
 
-For MRI, an sCT is produced once per source volume before the same dose route.
-The public reproducibility path uses the 2.5-D UNet++/ResNet-34
-`MR_CBCT/CV_1.pt` checkpoint from
+For MRI, an sCT is produced with **TotalSynth** once per source volume before
+the same dose route. The public reproducibility path uses the 2.5-D
+UNet++/ResNet-34 `MR_CBCT/CV_1.pt` checkpoint from
 [IMPACTSynth](https://huggingface.co/VBoussot/ImpactSynth), executed with
 [KonfAI](https://github.com/vboussot/KonfAI). This public checkpoint replaces
 our unavailable private DoseRAD-specific sCT fine-tuning, so public MRI output
