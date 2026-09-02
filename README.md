@@ -5,18 +5,13 @@ Reference code for our final **proton CT and proton MRI** entries to the
 method predicts one three-dimensional dose contribution per proton beamlet in
 a beam's-eye-view (BEV) frame and maps it back to the native patient grid.
 
-> **Challenge result:** 2nd place in the [DoseRAD 2026 Proton Dose on MR
-> challenge](https://doserad2026.grand-challenge.org/evaluation/final-testing-proton-dose-on-mr/leaderboard/).
+[![DoseRAD 2026 Proton Dose on MR](https://img.shields.io/badge/DoseRAD%202026-Proton%20Dose%20on%20MR-1f6feb?style=flat-square)](https://doserad2026.grand-challenge.org/evaluation/final-testing-proton-dose-on-mr/leaderboard/)
+
+> 🥈 **2nd Place** — [DoseRAD 2026 Proton Dose on MR challenge](https://doserad2026.grand-challenge.org/evaluation/final-testing-proton-dose-on-mr/leaderboard/)
 
 This is a compact scientific release: it contains the final dose architecture,
 preprocessing geometry, loss, training loop, inference runtime, Docker build
-context, and paper sources. It intentionally excludes challenge images,
-caches, experiment logs, abandoned variants, private medical data, Docker
-archives, and weight binaries.
-
-> **Scope.** This repository describes the final ProtonFiLM-Lite route. Photon
-> experiments and the abandoned three-checkpoint ensembles are not presented
-> as the submitted method.
+context, and paper sources.
 
 ## Method overview
 
@@ -24,7 +19,7 @@ For each ray, CT anatomy is interpolated with a cubic B-spline into a
 `288 x 64 x 64` `(depth, lateral, superior)` BEV grid at `2 x 1 x 1 mm`. The
 first depth plane is 320 mm upstream from the ray target. Intensities are
 clipped to physical HU bounds and mapped to `[0,1]`; the beamlet energy is
-mapped from 31.729--200.7966 MeV to `[0,1]`.
+mapped from 31.729-200.7966 MeV to `[0,1]`.
 
 The dose model is a six-level, base-width-6 residual 3-D U-Net with GroupNorm,
 SiLU, Softplus output, and restrained deep FiLM conditioning. Its deployed
