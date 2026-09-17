@@ -28,9 +28,13 @@ test-data/
 *.h5
 *.hdf5
 
-# Model resources are downloaded or supplied separately; see models/README.md.
+# Large model resources remain external.
 models/proton/*.pt
+!models/proton/proton_film_lite_b6_epoch79.pt
+
+# Public sCT resources are downloaded separately.
 models/impact_synth/
+
 *.pth
 *.ckpt
 
