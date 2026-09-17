@@ -1,29 +1,29 @@
 # Model resources
 
-No weight file is tracked by Git. The Docker and command-line tools read model
-resources from this directory (or from a path supplied explicitly).
-
 ## Proton dose checkpoint
 
-Place the inference export at:
+The final inference checkpoint is distributed directly with this repository:
 
 ```text
 models/proton/proton_film_lite_b6_epoch79.pt
 ```
 
-The source training checkpoint is the final continuation `best.pt`, phase
-epoch 79 (zero-based epoch 78). Its source SHA-256 is recorded in
-`configs/proton_final.json`. Export it with:
+It contains the inference-only state dictionary for the final
+ProtonFiLMLiteResUNet3D model. The training-only deep-supervision heads
+are not included.
 
+The source training checkpoint corresponds to phase epoch 79
+(zero-based epoch 78). Checkpoint provenance and SHA-256 hashes are recorded
+in configs/proton_final.json.
+
+To regenerate the inference checkpoint from the original training checkpoint:
 ```bash
 python scripts/export_proton_weights.py \
   /path/to/best.pt \
   models/proton/proton_film_lite_b6_epoch79.pt
 ```
 
-The export removes the two training-only deep-supervision heads. Never add the
-resulting `.pt` file to Git; distribute it through a release asset, an approved
-model store, or directly to an authorized user. The expected inference export
+The export removes the two training-only deep-supervision heads. The expected inference export
 SHA-256 is
 `e027b133b625b0bb89cb109a44e74f987a45da9646680a05bd8ee089550fe902`.
 
