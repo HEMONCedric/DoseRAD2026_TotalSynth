@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Paper](https://img.shields.io/badge/📌%20Paper-TotalSynth-blue)](https://arxiv.org/abs/2609.13838)
 [![DoseRAD 2026 Proton Dose on MR](https://img.shields.io/badge/DoseRAD%202026-Proton%20Dose%20on%20MR-1f6feb?style=flat-square)](https://doserad2026.grand-challenge.org/evaluation/final-testing-proton-dose-on-mr/leaderboard/)
 
 # DoseRAD2026
