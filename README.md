@@ -35,6 +35,8 @@ UNet++/ResNet-34 `MR_CBCT/CV_1.pt` checkpoint from
 our unavailable private DoseRAD-specific sCT fine-tuning, so public MRI output
 is method-reproducible but not bit-identical to the challenge submission.
 
+> 📌 **TotalSynth reference:** [Boussot et al., *TotalSynth: Robust Whole-Body Synthetic CT from MRI and CBCT* (arXiv:2609.13838, 2026)](https://arxiv.org/html/2609.13838v1)
+
 The full method diagram is in [the paper](paper/paper.pdf).
 
 ## Repository structure
@@ -267,8 +269,9 @@ ruff check doserad2026 scripts training tests
 ## Paper and citation
 
 The LNCS manuscript and its figures are under `paper/`. Until final bibliographic
-metadata are assigned, cite this repository via `CITATION.cff`. IMPACTSynth and
-KonfAI must also be cited when using the public MRI route.
+metadata are assigned, cite this repository via `CITATION.cff`. The
+[TotalSynth paper](https://arxiv.org/html/2609.13838v1), IMPACTSynth, and KonfAI
+should also be cited when using the public MRI route.
 
 ## License and data policy
 
