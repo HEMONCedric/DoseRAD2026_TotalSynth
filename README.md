@@ -161,19 +161,14 @@ events are written below `<out-dir>/tensorboard`.
 
 ## Checkpoints
 
-Git ignores all weight formats. See [models/README.md](models/README.md) for
-exact paths, provenance, and export commands.
-
-The final dose source checkpoint is phase epoch 79 (stored epoch 78), SHA-256
-`eb0c5451a9eacd373fe8f54fd05a9cc33098891f2ee9083d2761232319d65e0b`.
-Export its inference-only state to:
+The final proton inference checkpoint is included directly in this repository:
 
 ```text
 models/proton/proton_film_lite_b6_epoch79.pt
 ```
 
-The expected inference export SHA-256 is
-`e027b133b625b0bb89cb109a44e74f987a45da9646680a05bd8ee089550fe902`.
+Its training provenance and SHA-256 hashes are recorded in
+configs/proton_final.json.
 
 For public sCT, download only the pinned IMPACTSynth CV-1 configuration and
 weights plus the public body-mask dependency:
