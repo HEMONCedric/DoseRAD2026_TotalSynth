@@ -1,11 +1,11 @@
+[![DoseRAD 2026 Proton Dose on MR](https://img.shields.io/badge/DoseRAD%202026-Proton%20Dose%20on%20MR-1f6feb?style=flat-square)](https://doserad2026.grand-challenge.org/evaluation/final-testing-proton-dose-on-mr/leaderboard/)
+
 # DoseRAD2026
 
 Reference code for our final **proton CT and proton MRI** entries to the
 [DoseRAD2026 Grand Challenge](https://doserad2026.grand-challenge.org/). The
 method predicts one three-dimensional dose contribution per proton beamlet in
 a beam's-eye-view (BEV) frame and maps it back to the native patient grid.
-
-[![DoseRAD 2026 Proton Dose on MR](https://img.shields.io/badge/DoseRAD%202026-Proton%20Dose%20on%20MR-1f6feb?style=flat-square)](https://doserad2026.grand-challenge.org/evaluation/final-testing-proton-dose-on-mr/leaderboard/)
 
 > 🥈 **2nd Place** — [DoseRAD 2026 Proton Dose on MR challenge](https://doserad2026.grand-challenge.org/evaluation/final-testing-proton-dose-on-mr/leaderboard/)
 
